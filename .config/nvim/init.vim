@@ -4,6 +4,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pbrisbin/vim-mkdir'
 
 call plug#end()
 
