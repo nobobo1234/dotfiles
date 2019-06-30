@@ -7,13 +7,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-" Set line numbers
-set number
+" Set UI
+set number "set line numbers
+set cursorline "highlight current line
 
 " Set tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set incsearch " Search as we enter characters
 
 " Set material theme
 set background=dark
