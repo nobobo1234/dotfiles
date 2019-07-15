@@ -18,3 +18,4 @@ I have the following tools installed
 - lemonbar-xft (https://github.com/drscream/lemonbar-xft)
 - ufetch (https://gitlab.com/jschx/ufetch)
 - feh (https://github.com/derf/feh)
+- powerline fonts (https://github.com/powerline/fonts)
