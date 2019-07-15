@@ -4,6 +4,8 @@ This uses [Alacritty](https://github.com/jwilm/alacritty) as terminal emulator,
 [compton-tryone](https://github.com/tryone144/compton) as compositor,
 and [fish 3](https://github.com/fish-shell/fish-shell) as shell.
 
+My dotfiles are managed with [yadm](https://github.com/TheLocehiliosan/yadm).
+
 ### Screenshot
 ![Screenshot of setup](https://i.paste.pics/0a3b11e02647ef6d27dbcd783d34e9a5.png)
 
