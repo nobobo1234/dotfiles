@@ -182,7 +182,6 @@ static key keys[] = {
     // Start programs
     {  MOD ,              XK_d,          start,             {.com = menucmd}},
     {  MOD ,              XK_Return,     start,             {.com = termcmd}},
-    {  MOD |CONTROL,      XK_s,          start,             {.com = shutdowncmd}},
     // Exit or restart 2bwm
     {  MOD |CONTROL,      XK_q,          twobwm_exit,       {.i=0}},
     {  MOD |CONTROL,      XK_r,          twobwm_restart,    {.i=0}},
