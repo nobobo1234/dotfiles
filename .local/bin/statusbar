@@ -1,32 +1,24 @@
 #!/usr/bin/env bash
+# Inspired by JLErvins bar
 
-source "${HOME}/.cache/squash/colors"
+BG="#263238"
+FG="#eeffff"
 
 WIDTH=1280
 HEIGHT=25
 XOFF=0
 YOFF=0
 BRDR=5
-BRDRC=${BG}
 BBG=${BG}
 BFG=${FG}
 
 SEP=" "
-SEP2="    "
-SEPB="__"
-SPC="%{B$BG}%{F$BG}$SEPB%{B-}%{F-}"
 
 CLOCKICON=$(echo -e "\uf017")
 
-PANIC="%{F$MAG}%{B$BG}${SEP}"
-ALERT="%{F$RED}%{B$BG}${SEP}"
-WARN="%{F$YLW}%{B$BG}${SEP}"
-GOOD="%{F$GRN}%{B$BG}${SEP}"
-PLAIN="%{F$WHT}%{B$BG}${SEP}"
 GEN="%{F$FG}%{B$BG}${SEP}"
 EMPTY="%{F$FG}%{B$BG}${SEP}"
 BLACK="%{F$FG}%{B$BG}${SEP}"
-FULL="%{F$BLK}%{B$BG}${SEP}"
 CLR="${SEP}%{B-}${F-}"
 
 FONTS="-f Ubuntu Mono -f FontAwesome"

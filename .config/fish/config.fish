@@ -11,3 +11,7 @@ alias vi="nvim"
 # fnm
 set PATH /home/noah/.fnm $PATH
 fnm env --multi | source
+
+if test (tty) = "/dev/tty1"
+    startx
+end

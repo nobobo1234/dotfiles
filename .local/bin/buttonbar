@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source "${HOME}/.cache/squash/colors"
+BG="#263238"
+FG="#eeffff"
 
 shutdown="%{A:shutdown -h now:}Shutdown%{A}"
 reboot="%{A:reboot:}Reboot%{A}"

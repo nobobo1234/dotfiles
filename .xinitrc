@@ -1,6 +1,3 @@
-# sxhkd -c $HOME/.config/bspwm/sxhkdrc &
-# squash material
-# exec bspwm
 setxkbmap -option caps:escape
 statusbar &
 buttonbar &
