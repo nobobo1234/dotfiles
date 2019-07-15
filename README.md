@@ -12,7 +12,7 @@ My dotfiles are managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 ### Tools
 I have the following tools installed
 - fnm (https://github.com/Schniz/fnm)
-- oh my fish (https://github.com/oh-my-fish/oh-my-fish)
+- oh my fish (https://github.com/oh-my-fish/oh-my-fish) with [spacefish](https://github.com/matchai/spacefish) as theme
 - latest nightly neovim (https://github.com/neovim/neovim)
 - vim-plug (https://github.com/junegunn/vim-plug)
 - lemonbar-xft (https://github.com/drscream/lemonbar-xft)
