@@ -1,7 +1,11 @@
 # Noah's Dotfiles
 This uses [Alacritty](https://github.com/jwilm/alacritty) as terminal emulator, 
-[2bwm](https://github.com/venam/2bwm) as window manager, and [fish 3](https://github.com/fish-shell/fish-shell) as shell.
+[2bwm](https://github.com/venam/2bwm) as window manager, 
+[compton-tryone](https://github.com/tryone144/compton) as compositor,
+and [fish 3](https://github.com/fish-shell/fish-shell) as shell.
 
+### Screenshot
+![Screenshot of setup](https://i.paste.pics/0a3b11e02647ef6d27dbcd783d34e9a5.png)
 
 ### Tools
 I have the following tools installed

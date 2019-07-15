@@ -1,2 +1,15 @@
-vim +PlugInstall +qall
+#!/usr/bin/bash
+
+if command -v nvim >/dev/null 2>&1; then
+    echo "Installing neovim plugins"
+    vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
+
+if command -v 2bwm; then
+    echo "Rebuilding 2bwm"
+    cd ~/2bwm/
+    make
+    sudo make install
+fi
+
 fish

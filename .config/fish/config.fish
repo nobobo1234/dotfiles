@@ -1,4 +1,4 @@
-set -gx VIMRUNTIME /usr/share/nvim
+set -gx VIMRUNTIME /usr/share/nvim/runtime/
 set -gx PATH ~/.yarn/bin ~/.local/bin $PATH
 
 set SPACEFISH_PROMPT_ADD_NEWLINE false
