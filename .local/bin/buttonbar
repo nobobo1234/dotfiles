@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "${HOME}/.cache/squash/colors"
+
+shutdown="%{A:shutdown -h now:}Shutdown%{A}"
+reboot="%{A:reboot:}Reboot%{A}"
+
+OPTIONS="-d -g 1280x25+1280+0 -B ${BG} -F ${FG} -u 2 -f Ubuntu Mono -p" 
+
+echo "%{l}%{O5}${shutdown}%{r}${reboot}%{O5}" | lemonbar ${OPTIONS} | sh > /dev/null

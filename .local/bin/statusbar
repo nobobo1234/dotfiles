@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+
+source "${HOME}/.cache/squash/colors"
+
+WIDTH=1280
+HEIGHT=25
+XOFF=0
+YOFF=0
+BRDR=5
+BRDRC=${BG}
+BBG=${BG}
+BFG=${FG}
+
+SEP=" "
+SEP2="    "
+SEPB="__"
+SPC="%{B$BG}%{F$BG}$SEPB%{B-}%{F-}"
+
+CLOCKICON=$(echo -e "\uf017")
+
+PANIC="%{F$MAG}%{B$BG}${SEP}"
+ALERT="%{F$RED}%{B$BG}${SEP}"
+WARN="%{F$YLW}%{B$BG}${SEP}"
+GOOD="%{F$GRN}%{B$BG}${SEP}"
+PLAIN="%{F$WHT}%{B$BG}${SEP}"
+GEN="%{F$FG}%{B$BG}${SEP}"
+EMPTY="%{F$FG}%{B$BG}${SEP}"
+BLACK="%{F$FG}%{B$BG}${SEP}"
+FULL="%{F$BLK}%{B$BG}${SEP}"
+CLR="${SEP}%{B-}${F-}"
+
+FONTS="-f Ubuntu Mono -f FontAwesome"
+
+DESKTOP_COUNT=10
+PANEL_FIFO=$HOME/.fifo/panel-fifo
+[ -e "${PANEL_FIFO}" ] && rm "${PANEL_FIFO}"
+mkfifo "${PANEL_FIFO}"
+
+OPTIONS="-d -g ${WIDTH}x${HEIGHT}+${XOFF}+${YOFF} -B ${BBG} -F ${BFG} -u 2 ${FONTS}"
+
+icon() {
+    printf "%b" "${1}"
+}
+
+workspaces() {
+    while true; do
+        local cur=$(($(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')+1))
+        local total=${DESKTOP_COUNT}
+        local seq=""
+
+        for ((i=1;i<cur;i++)); do
+            seq+="${EMPTY}${i}${CLR}"
+        done
+
+        seq+="%{U$YLW}%{+u}${BLACK}${cur}${SEP}%{-u}"
+
+        min=$cur+1
+        for ((i=min;i<=total;i++)); do
+            seq+="${EMPTY}${i}${CLR}"
+        done
+
+        echo "WORKSPACES ${seq}${CLR}"
+        
+        sleep 0.5
+    done
+}
+
+workspaces > "${PANEL_FIFO}" &
+
+window() {
+    while true; do
+        local window=$(xtitle -t 70)
+        echo "WINDOW ${window}${CLR}"
+
+        sleep 1;
+    done
+}
+
+window > "${PANEL_FIFO}" &
+
+clock() {
+    while true; do
+        local clock="$(date +'%a %d %H:%M')"
+        echo "CLOCK ${GEN}$(icon "\uf017")${SEP}${clock}${CLR}"
+        
+        sleep 1;
+    done
+}
+
+clock > "${PANEL_FIFO}" &
+
+while read -r line; do
+    case $line in
+        WORKSPACES*)
+            fn_work="${line#WORKSPACES }"
+            ;;
+        CLOCK*)
+            fn_time="${line#CLOCK }"
+            ;;
+        WINDOW*)
+            fn_window="${line#WINDOW }"
+            ;;
+    esac
+    printf "%s\n" "%{l}${fn_work}${SEP}%{c}${fn_window}%{r}${fn_time}"
+done < "${PANEL_FIFO}" | lemonbar ${OPTIONS} | sh > /dev/null
