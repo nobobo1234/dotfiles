@@ -7,7 +7,7 @@ and [fish 3](https://github.com/fish-shell/fish-shell) as shell.
 My dotfiles are managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 
 ### Screenshot
-![Screenshot of setup](https://i.paste.pics/0a3b11e02647ef6d27dbcd783d34e9a5.png)
+![Screenshot of setup](https://i.paste.pics/6da16bc0e21e300cc6cd8f71fd1ab981.png)
 
 ### Tools
 I have the following tools installed
